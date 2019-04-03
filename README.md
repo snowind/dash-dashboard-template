@@ -1,1 +1,1 @@
-# dash-examples
+# dash-dashboard-template
