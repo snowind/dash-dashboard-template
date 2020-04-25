@@ -20,7 +20,7 @@ navbar = dbc.NavbarSimple(
         ),
         dbc.Input(type="search", placeholder="Search"),
     ],
-    brand='Signum',
+    brand='Dashboard',
     color="dark",
     dark=True,
 )
@@ -47,7 +47,8 @@ app.layout = html.Div([
 ])
 
 @app.callback(
-    [Output('link-home', 'active'),Output('link-docs','active')],
+    [Output('link-home', 'active'),
+     Output('link-docs','active')],
     [Input('url', 'pathname')])
 def update_active(pathname):
     active_list = []
@@ -60,7 +61,7 @@ def update_active(pathname):
     return active_list
 
 @app.callback(Output('main-content', 'children'),
-              [Input('url', 'pathname')])
+             [Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/apps/docs':
         return docs.layout
